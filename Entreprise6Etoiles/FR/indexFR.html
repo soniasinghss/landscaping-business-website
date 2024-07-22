@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entreprise Six Étoiles</title>
+    <link rel="stylesheet" href="stylesFR.css">
+</head>
+<body>
+    <header>
+        <a href="/fr/" class="logo-link"> 
+            <img src="ENTREPRISE.svg"alt="Company logo">
+        </a>
+        <nav>
+            <ul>
+                <li class="dropdown"> 
+                <a href="javascript:void(0)">SERVICES</a>
+                <div class="dropdown-content"> 
+                    <a href="Paving Stone Installation">Paving Stone Installation</a>
+                    <a href="Sod Lawn Installation">Sod Lawn Installation</a>
+                    <a href="Low Walls And Steps">Low Walls And Steps</a>
+                    <a href="Natural Stone">Natural Stone</a>
+                    <a href="Mini-Excavation">Mini-Excavation</a>
+                    <a href="Asphalt">Asphalt</a>
+                </div>
+</li>
+                <li><a href="#portfolio">PROJECTS</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+                <li><a href="/en/" class="language-button">EN</a></li> 
+
+            </ul>
+
+        </nav>
+    </header>
+    <div class ="image-container">
+        <img src="websitepic.jpeg" alt="Landscaping example picture">
+<div class ="text-overlay">E N T R E P R I S E<br> S I X É T O I L E S</div>
+    </div>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Comprehensive landscaping services including design, maintenance, and installation.</p>
+    </section>
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <p>Check out some of our recent projects.</p>
+        <img src="project1.jpg" alt="Landscaping Project 1">
+        <img src="project2.jpg" alt="Landscaping Project 2">
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are passionate about creating beautiful outdoor spaces.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>Copyright © 2024 Entreprise Six Étoiles. All Rights Reserved.</p>
+    </footer>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('nav a');
+        
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Stop the default anchor behavior
+                    const destination = this.getAttribute('href');
+                    window.location.hash = ''; // Clear any current hash
+                    window.location = destination; // Set the hash again to force reload
+                });
+            });
+        });
+        
+        
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.querySelector('.dropdown');
+    var dropbtn = dropdown.querySelector('.dropbtn');
+
+    dropbtn.onclick = function(event) {
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        event.stopPropagation();
+    };
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    };
+});
+
+
+        </script>
+</body>
+</html>
